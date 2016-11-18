@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let dataList : Array <String> = ["直接使用view中的UIBezierPath绘制矩形图", "配合使用绘图(设置path)", "配合使用绘图(设置layer)", "CA动画","画板", "CAGradientLayer颜色渐变", "CAGradientLayer颜色渐变动画"]
+    let dataList : Array <String> = ["直接使用view中的UIBezierPath绘制矩形图", "配合使用绘图(设置path)", "配合使用绘图(设置layer)", "CAGradientLayer颜色渐变", "CAGradientLayer颜色渐变动画", "CASpringAnimation动画展示", "画板"]
     lazy var tableView: UITableView = {
         let tableview = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), style: .plain)
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
@@ -47,7 +47,7 @@ extension ViewController: UITableViewDelegate {
             navigationController?.pushViewController(ThirdViewController(), animated: true); return
         }
         
-        if dataList[indexPath.row] == "CA动画" {
+        if dataList[indexPath.row] == "CASpringAnimation动画展示" {
             navigationController?.pushViewController(FourthViewController(), animated: true); return
         }
         

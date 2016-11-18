@@ -13,6 +13,8 @@ class SeventhViewController: UIViewController {
     
     var shapeLayer: CAShapeLayer!
     
+    var gradientLayer: CAGradientLayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,13 +56,13 @@ class SeventhViewController: UIViewController {
         
         //重点
         
-        let gradientLayer = CAGradientLayer()
+        gradientLayer = CAGradientLayer()
         
         gradientLayer.mask = shapeLayer
         
         gradientLayer.colors = colors
         
-        //        gradientLayer.locations = [0,1]//为毛设置了就红色
+//        gradientLayer.locations = [0.6,0.8]//为毛设置了就红色 解答：如果设置为[0,1]就统一颜色了
         
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         
@@ -70,7 +72,7 @@ class SeventhViewController: UIViewController {
         
         gradientLayer.frame = view.bounds
         
-        view.layer.addSublayer(gradientLayer)
+//        view.layer.addSublayer(gradientLayer)
         
         view.layer.backgroundColor = UIColor.black.cgColor
         
@@ -83,6 +85,8 @@ class SeventhViewController: UIViewController {
     
     
     @IBAction func doAcTion(_ sender: AnyObject) {
+        
+        view.layer.addSublayer(gradientLayer)//点击之后再添加
         
         shapeLayer.strokeStart = 0
         
