@@ -46,6 +46,9 @@ class EighthViewController: UIViewController {
         //重复动画(存在先后顺序的问题，需要先设置CA动画的属性)，再添加动画
         keyFrame.repeatCount = Float(CGFloat.greatestFiniteMagnitude)
         
+        //自动颠倒
+        keyFrame.autoreverses = true
+        
         view1.layer.add(keyFrame, forKey: keyFrame.keyPath)
         
         //CAKeyframeAnimation可以通过“path"和"values"来设置动画，如果设置了path，那么values关键帧将被忽略
