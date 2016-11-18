@@ -88,21 +88,33 @@ class SeventhViewController: UIViewController {
         
         view.layer.addSublayer(gradientLayer)//点击之后再添加
         
-        shapeLayer.strokeStart = 0
+        //第一种方法 low！！！
+//        shapeLayer.strokeStart = 0
+//        
+//        shapeLayer.strokeEnd = 0
+//
+//        var end: CGFloat = 0.0
+//        
+//        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (Timer) in
+//            end = end + 0.1
+//            if end >= 1.0 {
+//                Timer.invalidate()
+//            }
+//            print(end)
+//            self.shapeLayer.strokeEnd = end
+//        }
         
-        shapeLayer.strokeEnd = 0
+        //第二种方法 🐂
         
-        var end: CGFloat = 0.0
+        let basic = CABasicAnimation(keyPath: "strokeEnd")
         
-        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (Timer) in
-            end = end + 0.1
-            if end >= 1.0 {
-                Timer.invalidate()
-            }
-            print(end)
-            self.shapeLayer.strokeEnd = end
-        }
+        basic.fromValue = 1
         
+        basic.toValue = 0
+        
+        basic.duration = 2
+        
+        shapeLayer.add(basic, forKey: basic.keyPath)
         
     }
 
