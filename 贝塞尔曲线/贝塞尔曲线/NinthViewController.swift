@@ -65,7 +65,7 @@ class NinthViewController: UIViewController {
         
         imageView.image = UIImage(named: "屏幕快照 2016-11-18 下午5.31.42")
         
-        view.layer.add(transition, forKey: "123")
+        imageView.layer.add(transition, forKey: "123")
         
         
     }
